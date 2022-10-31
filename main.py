@@ -39,13 +39,20 @@ def pending_assignments(within_x_hours):
 # formats the message
 def msg_formatter(in_list, within_x_hours):
     output = ['Hello ' + creds.your_name + '-']
-    if len(in_list) == 0:
-        output.append(f'You have nothing due in the next {within_x_hours} hours!')
+    if int(within_x_hours) == 0:
+        output.append('You have nothing due in the next hour!')
+        return output
+    elif int(within_x_hours) == 1:
+        output.append('You have nothing due in the next 1 hour!')
+        return output
     else:
-        output.append(f"Here's what's coming up for the next {within_x_hours} hours:")
-        for x in in_list:
-            output.append(x)
-    return output
+        if len(in_list) == 0:
+            output.append(f'You have nothing due in the next {within_x_hours} hours!')
+        else:
+            output.append(f"Here's what's coming up for the next {within_x_hours} hours!")
+            for x in in_list:
+                output.append(x)
+        return output
 
 
 def main():
