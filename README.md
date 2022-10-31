@@ -1,0 +1,1 @@
+Python script to get a user's submittable assignments from the Canvas API within a given number of hours. Planning to implement a messaging feature so a user could receive alerts via email or SMS
